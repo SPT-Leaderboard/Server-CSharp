@@ -29,7 +29,7 @@ public class Logging(ISptLogger<Logging> logger) : IOnLoad
 {
     public Task OnLoad()
     {
-        logger.Success("[SPTLeaderboard] SPTLeaderboard loaded");
+        logger.Success("[SPT Leaderboard] Server mod loaded.");
         return Task.CompletedTask;
     }
 }
