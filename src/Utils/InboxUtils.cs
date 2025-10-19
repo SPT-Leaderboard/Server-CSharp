@@ -51,12 +51,18 @@ public class InboxUtils(
                 return false;
             }
 
+            if (data.Status != "success")
+            {
+                logger.LogDebug("[SPTLeaderboard] No new messages for SessionID {SessionId}", sessionId);
+                return true;
+            }
+
             var generatedItems = itemUtils.GetItemInstancesAsFiR(data.Items ?? []);
             mailSendService.SendDirectNpcMessageToPlayer(
                 sessionId,
                 "54cb50c76803fa8b248b4571", // Prapor
                 MessageType.MessageWithItems,
-                data.Message ?? "",
+                data.Message ?? "[MESSAGE WITH NO CONTENTS]",
                 generatedItems.ToList()
             );
 
