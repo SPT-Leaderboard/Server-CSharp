@@ -25,7 +25,7 @@ public class InboxUtils(
     {
         try
         {
-            UriBuilder uri = new UriBuilder("https://sptlb.yuyui.moe")
+            UriBuilder uri = new UriBuilder("https://sptlb.katrinfoxvr.com")
             {
                 Path = "/api/main/inbox/checkInbox.php",
                 Query = $"sessionId={sessionId}",
